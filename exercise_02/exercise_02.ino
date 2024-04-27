@@ -10,7 +10,6 @@ int tl;
 unsigned long startBulb;
 unsigned long bulbPassedTime;
 
-
 unsigned long start;
 unsigned long passedTime;
 
@@ -28,7 +27,6 @@ void setup()
   startBulb = millis();
   machineOneState = 0;
   
-  
   digitalWrite(LED1, LOW);
   digitalWrite(LED2, HIGH);
   start = millis();
@@ -40,43 +38,40 @@ void loop()
   tl = digitalRead(TLAC);
   bulbPassedTime = millis() - startBulb;
 
-
   passedTime = millis() - start;
-  
-  
   
   switch (machineOneState) 
   {
     case 0:
       if (tl == LOW)
       {
-          digitalWrite(ZEL, HIGH);
-            startBulb = millis();
-            machineOneState = 1;
+        digitalWrite(ZEL, HIGH);
+        startBulb = millis();
+        machineOneState = 1;
       }
       break;
     case 1:
       if (tl == HIGH) 
       {
-            machineOneState = 2;
+        machineOneState = 2;
       }
       break;
     case 2:
       if (bulbPassedTime > 2000) 
       {
-          digitalWrite(ZEL, LOW);
-            machineOneState = 0;
+        digitalWrite(ZEL, LOW);
+        machineOneState = 0;
       }
       else if (tl == LOW)
-        {
-            digitalWrite(ZEL, LOW);
-          machineOneState = 3;
-        }
+      {
+        digitalWrite(ZEL, LOW);
+        machineOneState = 3;
+      }
       break;
     case 3:
       if (tl == HIGH) 
       {
-          machineOneState = 0;
+        machineOneState = 0;
       }
       break;
   }
@@ -86,19 +81,19 @@ void loop()
     case 0:
       if (passedTime > 1000) 
       {
-          digitalWrite(LED1, HIGH);
-            digitalWrite(LED2, LOW);
-            start = millis();
-            machineTwoState = 1;
+        digitalWrite(LED1, HIGH);
+        digitalWrite(LED2, LOW);
+        start = millis();
+        machineTwoState = 1;
       }
       break;
     case 1:
       if (passedTime > 1000) 
       {
-          digitalWrite(LED1, LOW);
-            digitalWrite(LED2, HIGH);
-            start = millis();
-            machineTwoState = 0;
+        digitalWrite(LED1, LOW);
+        digitalWrite(LED2, HIGH);
+        start = millis();
+        machineTwoState = 0;
       }
       break;
   }
