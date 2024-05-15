@@ -6,5 +6,5 @@
 
 # Info about work process regarding exercises
 
-- Individual exercises were being worked on between october 2023 and december 2023
-- The exercises were uploaded from Tinkercad to this repository in march 2024, which was shortly after the end of winter semester of 2nd year at the Technical university
+- Individual exercises were being worked on between October 2023 and December 2023
+- The exercises were uploaded from Tinkercad to this repository in March 2024, which was shortly after the end of winter semester of 2nd year at the Technical university
